@@ -50,8 +50,10 @@ k0_fit = fit([tkg(L) salg(L)],log(k0_vol(L)),k0_fit,k0_opts);
 
 % Predict k0
 tk = t + 273.15;
-k0 = exp(k0_fit([tk s]));
-k0_c90 = diff(exp(predint(k0_fit,[tk s],0.9)),[],2);
+k0 = NaN(size(t));
+k0(:) = exp(k0_fit([tk(:) s(:)]));
+k0_c90 = NaN(size(t));
+k0_c90(:) = diff(exp(predint(k0_fit,[tk(:) s(:)],0.9)),[],2);
 
 % Calculate using Weiss (1974) coefficients
 A1 = -58.0931;
