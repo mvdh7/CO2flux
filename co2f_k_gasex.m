@@ -62,6 +62,17 @@ switch lower(ref)
 
         k_valid = sch_valid;
         
+    case 'bern'
+        % 'Bern new'
+        % Equation is pers. comm. from Mariana Ribas-Ribas
+        
+        [sch,sch_valid] = co2f_schmidt14(temp,gas);
+
+        k = (11 + 2.275 * u10) .* sqrt(660./sch); % cm/hr
+        k_unc = NaN * k;
+
+        k_valid = sch_valid;
+        
 end %switch
 
 end %function co2f_k_gasex
