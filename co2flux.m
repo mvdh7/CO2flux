@@ -17,7 +17,7 @@ function [FCO2,FCO2_unc,FCO2_valid,delpCO2,k,k0_weiss] ...
 % -         ref: choice of gas transfer coefficient equation -
 %        'w14' Wanninkhof, 2014, Limnol Oceanogr Methods 12, 351-362
 %        't09' Takahashi et al., 2009, Deep-Sea Res Pt II 56, 554-577
-% Written by Matthew P. Humphreys [last updated 2016-11-07]
+% Written by Matthew P. Humphreys [last updated 2018-10-16]
 
 [k,k_unc,k_valid] = co2f_k_gasex(temp,u10,'co2',ref); % cm/hr
 [~,~,k0_weiss,k0_weiss_unc,k0_valid] = co2f_weiss74(temp,sal); % mol/(l atm)
