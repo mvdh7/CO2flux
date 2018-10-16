@@ -20,7 +20,7 @@ function [FCO2,FCO2_unc,FCO2_valid,delpCO2,k,k0_weiss] ...
 % Written by Matthew P. Humphreys [last updated 2018-10-16]
 
 [k,k_unc,k_valid] = co2f_k_gasex(temp,u10,'co2',ref); % cm/hr
-[~,~,k0_weiss,k0_weiss_unc,k0_valid] = co2f_weiss74(temp,sal); % mol/(l atm)
+[~,~,k0_weiss,k0_weiss_unc,k0_valid] = co2f_weiss74(temp,sal);% mol/(l atm)
 
 Tr = k .* k0_weiss * 1e1; % mol / (m^2 hr atm)
 Tr_unc = sqrt((k_unc./k).^2 + (k0_weiss_unc./k0_weiss).^2) .* Tr;
