@@ -33,16 +33,15 @@ switch lower(ref)
         k_valid = Sch_valid;
     case 'k06'
         % Krakauer et al. (2006), Tellus B 58(5), 390-471.
-        % Equation is pers. comm. from Mariana Ribas Ribas; I cannot find
-        %  it in the referenced paper.
+        % via Ribas Ribas et al. (2019)
         [Sch, Sch_valid] = CO2flux_Schmidt_W92(temp, gas);
         k = 2.275*u10.*sqrt(660./Sch); % cm/hr
         k_unc = NaN*k;
         k_valid = Sch_valid;
     case 'mr2'
-        % Ribas Ribas et al. (2019)
+        % Ribas Ribas et al. (2019) "Wanninkhof + intercept"
         [Sch, Sch_valid] = CO2flux_Schmidt_W14(temp, gas);
-        k = (10.71 + 0.30*u10.^2).*sqrt(660./Sch); % cm/hr
+        k = (10.7 + 0.30*u10.^2).*sqrt(660./Sch); % cm/hr
         k_unc = NaN*k;
         k_valid = Sch_valid;
     case 'msf'
@@ -53,8 +52,7 @@ switch lower(ref)
         k_unc = NaN * k;
         k_valid = Sch_valid;
     case 'bern'
-        % 'Bern new'
-        % Equation is pers. comm. from Mariana Ribas-Ribas
+        % Ribas Ribas et al. (2019) "Krakauer + intercept"
         [Sch, Sch_valid] = CO2flux_Schmidt_W14(temp, gas);
         k = (11 + 2.275*u10).*sqrt(660./Sch); % cm/hr
         k_unc = NaN*k;
