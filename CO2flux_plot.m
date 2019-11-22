@@ -3,7 +3,8 @@ u10 = (0:0.1:20)';
 temp = 25;
 
 % Calculate k for all references
-refs = {'K06' 'K06i' 'N00' 'N00NS' 'R19' 'T09' 'W92' 'W14' 'W14i'};
+refs = {'KRP06' 'KRP06-int' 'NML00' 'NML00-NS' 'RBHW19' 'TSW09' ...
+    'W92' 'W14' 'W14-int'};
 k = NaN(numel(u10), numel(refs));
 for R = 1:numel(refs)
     k(:, R) = CO2flux_k_gasex(temp, u10, 'CO2', refs{R});
