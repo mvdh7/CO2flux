@@ -14,6 +14,7 @@ function [k, k_unc, k_valid] = CO2flux_k_gasex(temp, u10, gas, ref)
 %              described by Ribas-Ribas et al. (2019).
 %     'R19' = Ribas-Ribas et al. (2019), Geosciences 9(5), 230.
 %     'T09' = Takahashi et al. (2009), Deep-Sea Res. Pt. II 56, 554-577.
+%     'W92' = Wanninkhof (1992), 
 %     'W14' = Wanninkhof (2014), Limnol. Oceanogr. Methods 12, 351-362.
 %     'W14i' = Wanninkhof (2014) with a non-zero intercept, as described by
 %              Ribas-Ribas et al. (2019).
@@ -33,6 +34,12 @@ switch lower(ref)
         [Sch, Sch_valid] = CO2flux_Schmidt_W14(temp, gas);
         k = 0.251*u10.^2.*sqrt(660./Sch); % cm/hr
         k_unc = 0.2*k; % cm/hr
+        k_valid = Sch_valid;
+    case 'w92'
+        % Wanninkhof (1992), 
+        [Sch, Sch_valid] = CO2flux_Schmidt_W92(temp, gas);
+        k = 0.31*u10.^2.*sqrt(660./Sch); % cm/hr
+        k_unc = 0.25*k; % cm/hr
         k_valid = Sch_valid;
     case 'k06'
         % Krakauer et al. (2006), Tellus B 58(5), 390-471.
@@ -59,5 +66,17 @@ switch lower(ref)
         [Sch, Sch_valid] = CO2flux_Schmidt_W14(temp, gas);
         k = (11 + 2.275*u10).*sqrt(660./Sch); % cm/hr
         k_unc = NaN*k;
+        k_valid = Sch_valid;
+    case 'n00ns'
+        % Nightingale et al. (2000) for the North Sea
+        [Sch, Sch_valid] = CO2flux_Schmidt_W92(temp, gas);
+        k = (0.23*u10.^2 + 0.1*u10).*sqrt(600./Sch);
+        k_unc = 0.19*k;
+        k_valid = Sch_valid;
+    case 'n00'
+        % Nightingale et al. (2000)
+        [Sch, Sch_valid] = CO2flux_Schmidt_W92(temp, gas);
+        k = (0.222*u10.^2 + 0.333*u10).*sqrt(600./Sch);
+        k_unc = 0.2*k;
         k_valid = Sch_valid;
 end
