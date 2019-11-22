@@ -10,7 +10,7 @@ function [k, k_unc, k_valid] = CO2flux_k_gasex(temp, u10, gas, ref)
 %     'O2' = Oxygen.
 %   ref = Reference code to use for calculation (case insensitive).
 %         Available options are (see CO2flux_citations function and
-%         explanations in code below):
+%         explanatory notes in the code below):
 %     'KRP06', 'KRP06-int', 'NML00', 'NML00-NS', 'RBHW19', 'TSW09', 'W92',
 %     'W14' 'W14-int'.
 % Outputs:
@@ -71,4 +71,4 @@ switch lower(ref)
         k = (0.222*u10.^2 + 0.333*u10).*sqrt(600./Sch);
         k_unc = 0.2*k;
         k_valid = Sch_valid;
-end
+end % switch
