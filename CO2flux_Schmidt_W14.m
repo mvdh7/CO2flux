@@ -1,3 +1,5 @@
+% CO2flux: air-sea CO2 fluxes with uncertainties.
+% Copyright (C) 2019  Matthew Paul Humphreys  (GNU GPLv3)
 function [Sch, Sch_valid] = CO2flux_Schmidt_W14(temp, gas)
 %CO2flux_Schmidt_W14 Calculate Schmidt number following Wanninkhof (2014).
 % Part of the CO2flux toolbox [https://github.com/mvdh7/CO2flux].

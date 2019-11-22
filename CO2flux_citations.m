@@ -1,3 +1,5 @@
+% CO2flux: air-sea CO2 fluxes with uncertainties.
+% Copyright (C) 2019  Matthew Paul Humphreys  (GNU GPLv3)
 function citations = CO2flux_citations(refs)
 %CO2flux_citations Get literature citations from reference codes.
 % Part of the CO2flux toolbox [https://github.com/mvdh7/CO2flux].

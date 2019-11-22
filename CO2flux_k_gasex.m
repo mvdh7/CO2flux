@@ -1,3 +1,5 @@
+% CO2flux: air-sea CO2 fluxes with uncertainties.
+% Copyright (C) 2019  Matthew Paul Humphreys  (GNU GPLv3)
 function [k, k_unc, k_valid] = CO2flux_k_gasex(temp, u10, gas, ref)
 %CO2flux_k_gasex Calculate gas exchange coefficient in cm/hr.
 % Part of the CO2flux toolbox [https://github.com/mvdh7/CO2flux].

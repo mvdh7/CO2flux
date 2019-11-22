@@ -1,3 +1,5 @@
+% CO2flux: air-sea CO2 fluxes with uncertainties.
+% Copyright (C) 2019  Matthew Paul Humphreys  (GNU GPLv3)
 function [k0, k0_unc, k0_valid] = CO2flux_HenrysCO2(temp, psal)
 %CO2flux_HenrysCO2 Calculate Henry's constant for CO2 in mol/(l*atm).
 % Following Weiss (1974), Mar. Chem. 2, 203-215.

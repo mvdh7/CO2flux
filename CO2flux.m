@@ -1,3 +1,5 @@
+% CO2flux: air-sea CO2 fluxes with uncertainties.
+% Copyright (C) 2019  Matthew Paul Humphreys  (GNU GPLv3)
 function [FCO2, FCO2_unc, FCO2_valid, delpCO2, k, k0] = ...
     CO2flux(temp, psal, u10, pCO2air, pCO2air_unc, pCO2sw, pCO2sw_unc, ref)
 %CO2flux Calculate air-sea CO2 flux with uncertainty propagation.
