@@ -1,13 +1,16 @@
-function [k0,k0_unc,k0_valid] = CO2flux_HenrysCO2(temp, psal)
+function [k0, k0_unc, k0_valid] = CO2flux_HenrysCO2(temp, psal)
 %CO2flux_HenrysCO2 Calculate Henry's constant for CO2 in mol/(l*atm).
 % Following Weiss (1974), Mar. Chem. 2, 203-215.
-%
-% Part of the CO2flux toolbox [https://github.com/mvdh7/co2flux].
-% Written by Matthew P. Humphreys [last updated 2019-11-21].
-%
+% Part of the CO2flux toolbox [https://github.com/mvdh7/CO2flux].
+% Written by Matthew P. Humphreys [v1.0.0, last updated 2019-11-22].
 % Inputs:
 %   temp = Seawater temperature in degrees-C.
 %   psal = Practical salinity.
+% Outputs:
+%   k0 = Henry's constant.
+%   k0_unc = Uncertainty in k0.
+%   k0_valid = Are the input temperature and salinity within their valid
+%              ranges?
 A1 = -58.0931;
 A2 = 90.5069;
 A3 = 22.2940;

@@ -1,9 +1,7 @@
 function [Sch, Sch_valid] = CO2flux_Schmidt_W92(temp, gas)
 %CO2flux_Schmidt_W92 Calculate Schmidt number following Wanninkhof (1992).
-%
-% Part of the CO2flux toolbox [https://github.com/mvdh7/co2flux].
-% Written by Matthew P. Humphreys [last updated 2019-11-21].
-%
+% Part of the CO2flux toolbox [https://github.com/mvdh7/CO2flux].
+% Written by Matthew P. Humphreys [v1.0.0, last updated 2019-11-22].
 % Inputs:
 %   temp = Seawater temperature in degrees-C.
 %   u10 = Wind speed at 10 m above the sea surface in m/s.

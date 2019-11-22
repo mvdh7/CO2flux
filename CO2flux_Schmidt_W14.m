@@ -1,14 +1,12 @@
 function [Sch, Sch_valid] = CO2flux_Schmidt_W14(temp, gas)
 %CO2flux_Schmidt_W14 Calculate Schmidt number following Wanninkhof (2014).
-%
-% Part of the CO2flux toolbox [https://github.com/mvdh7/co2flux].
-% Written by Matthew P. Humphreys [last updated 2019-11-21].
-%
+% Part of the CO2flux toolbox [https://github.com/mvdh7/CO2flux].
+% Written by Matthew P. Humphreys [v1.0.0, last updated 2019-11-22].
 % Inputs:
 %   temp = Seawater temperature in degrees-C.
 %   u10 = Wind speed at 10 m above the sea surface in m/s.
 %   gas = Name of gas for Schmidt number calculation (case insensitive):
-%     'CO2' = Carbon dioxide;
+%     'CO2' = Carbon dioxide.
 %     'O2' = Oxygen.
 % Outputs:
 %   Sch = The Schmidt number.
